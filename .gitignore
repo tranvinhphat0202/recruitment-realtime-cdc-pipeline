@@ -1,0 +1,30 @@
+# 1. Cấu hình IDE cá nhân (VS Code)
+.vscode/
+
+# 2. Môi trường ảo và bộ nhớ đệm của Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# 3. Trạng thái hoạt động của Spark (CỰC KỲ QUAN TRỌNG)
+# Spark sinh ra hàng ngàn file rác liên tục trong quá trình streaming, tuyệt đối không push lên.
+data/checkpoint/
+data/search_offset.txt
+data/tracking_offset.txt
+
+# 4. Dữ liệu thô (Raw Data)
+# Đẩy file CSV nặng lên GitHub sẽ làm phình to repo. 
+data/source/*.csv
+!data/source/*_sample.csv
+
+# 5. Thư viện Spark tự động tải ngầm
+.ivy2/
+
+# 6. File hệ thống của Windows/macOS
+.DS_Store
+Thumbs.db
+
+# Bỏ qua toàn bộ thư mục checkpoint và mọi thứ bên trong nó
+data/checkpoint/
